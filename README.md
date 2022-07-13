@@ -14,7 +14,7 @@ Depth文件夹下应该存放.npy文件下。
 
 接着执行deal_cloud，deal_cloud使用两个参数，硬性删除背景和地平面，处理完后的点云存放在hard_value_pcd文件夹下
 
-接着执行peizhun，将处理后的点云配准，首先将每二十帧点云配准，生成的中间文件存放在dealing_pcd中，之后将这些配准后的文件再次配准，生成fusioned_pcd.pcd
+接着执行peizhun，将处理后的点云配准，点云匹配使用ICP算法，首先将每二十帧点云配准，生成的中间文件存放在dealing_pcd中，之后将这些配准后的文件再次配准，生成fusioned_pcd.pcd
 
 接着执行get_mesh，将融合后的点云制作成网格模型，保存为mesh.ply
 
@@ -24,8 +24,7 @@ Depth文件夹下应该存放.npy文件下。
 
 ![](media/730c725e2078917881d4ebdca78db5ba.png)
 
-Hard_value_z与hard_value_y，该参数是硬性删除高于z与高于y的点云
-
+Hard_value_z与hard_value_y，该参数是硬性删除高于z与高于y的点云（ransac平面去除）
 可以在vision中使用第一帧点云进行调试
 
 ![](media/f97c83e6519cdaeb4292b07fd836744e.png)
