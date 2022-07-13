@@ -35,12 +35,12 @@ Hard_value_z与hard_value_y，该参数是硬性删除高于z与高于y的点云
 
 深度图转点云：
 
-30min
+50min
 
 点云匹配：
 
-15min
+30min
 
 生成模型：
 
-3min
+5min
